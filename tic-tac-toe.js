@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Iterate over each child and add the "square" class
     Array.from(boardChildren).forEach(function(child) {
         child.classList.add('square');
+        
 
         child.addEventListener('click', function() {
           var index = Array.from(boardChildren).indexOf(child);
@@ -56,7 +57,20 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(Array.from(state_));
           
             checkWin();
+            
         });
+
+        child.addEventListener('mouseover',function(){
+            child.classList.add('hover');
+            
+        });
+
+        child.addEventListener('mouseout',function(){
+            child.classList.remove('hover');
+            
+        });
+
+        
     });
 });
 
